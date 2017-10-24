@@ -1,0 +1,31 @@
+/*
+* @Author: ztian
+* @Date:   2017-10-25 00:23:13
+* @Last Modified by:   ztian
+* @Last Modified time: 2017-10-25 00:37:32
+*/
+.nav{
+    background: #eee;
+    height: 30px;
+    line-height: 30px;
+}
+/* 用户部分 */
+.nav .user{
+    float: left;
+}
+/* 用户登录状态隐藏 */
+.nav .user.login{
+    display: none;
+}
+/* span间隔 */
+.nav .user .link{
+    margin-right: 5px;
+}
+/* 导航链接部分 */
+.nav .nav-list{
+    float: right;
+}
+/* 导航条链接显示 */
+.nav .nav-list .nav-item{
+    display: inline-block;
+}
