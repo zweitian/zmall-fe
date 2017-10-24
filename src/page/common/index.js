@@ -2,8 +2,9 @@
 * @Author: ztian
 * @Date:   2017-10-24 11:56:09
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-24 23:00:34
+* @Last Modified time: 2017-10-24 23:40:38
 */
 'use strict'
 console.log('global chunk');
 require('./layout.css');
+require('node_modules/font-awesome/css/font-awesome.min.css');
