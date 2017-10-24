@@ -1,0 +1,29 @@
+{
+  "name": "zmall-fe",
+  "version": "1.0.0",
+  "description": "zmall前端代码",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zweitian/zmall-fe.git"
+  },
+  "author": "zhuweitian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zweitian/zmall-fe/issues"
+  },
+  "homepage": "https://github.com/zweitian/zmall-fe#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.11.1",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^1.15.0"
+  }
+}
