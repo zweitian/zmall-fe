@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-20 11:18:01
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-23 10:12:16
+* @Last Modified time: 2017-10-24 22:59:14
 */
 'use strict';
 var Hogan = require('hogan');
@@ -59,7 +59,7 @@ var _mm={
         var value=$.trim(value);
         //非空校验
         if('require' === type){
-            return !!value;//两次取反，字符串非空返回true,字符串空返回false
+            return !!value;//两次取反,强转为布尔类型,字符串非空返回true,字符串空返回false
         }
         //手机号校验
         if('phone' === type){
@@ -80,6 +80,9 @@ var _mm={
     },
     doLogin : function(){
         window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+    },
+    goHome  : function(){
+        window.location.href = './index.html';
     }
 }
 module.exports=_mm;
