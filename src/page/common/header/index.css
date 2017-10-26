@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-26 14:33:22
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-26 15:20:46
+* @Last Modified time: 2017-10-26 16:35:02
 */
 /* ZMALL logo样式 */
 .header .logo{
@@ -26,6 +26,7 @@
     padding-left: 10px;
     font-size: 15px;
     border: 2px solid #c60023;
+    outline: none;
 }
 /* 搜索按钮样式 */
 .header .search-con .search-btn{

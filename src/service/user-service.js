@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-26 11:46:34
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-26 13:36:50
+* @Last Modified time: 2017-10-26 17:11:24
 */
 'use strict';
 var _mm = require('util/mm.js');
@@ -25,4 +25,4 @@ var _user = {
         });
     }
 };
-modules.exporst = _user;
+module.exports = _user;
