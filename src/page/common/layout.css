@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-24 23:00:19
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-25 00:03:43
+* @Last Modified time: 2017-10-26 14:09:01
 */
 /* css reset */
 *{
@@ -11,7 +11,7 @@
 }
 /* 定义字体格式 */
 body{
-    background: #f6f6f6;
+    background: #f6f6f6;/* 定义字体格式 */
     font:12px/1.5 tahoma, arial, Mircosoft YaHei, sans-serif;
 }
 li{
@@ -41,7 +41,7 @@ input[type='checkbox']{
 }
 /* 超链样式 */
 .link{
-    color: #999; /*#000全黑 #fff全白 #999黑白间的渐变色*/
+    color: #999; /*#000全黑 #fff全白 #999黑白间的渐变色 灰色*/
     cursor:pointer;
     text-decoration: none;/*去除超链文本下的线*/
 }

@@ -1,0 +1,25 @@
+/*
+* @Author: ztian
+* @Date:   2017-10-26 14:10:07
+* @Last Modified by:   ztian
+* @Last Modified time: 2017-10-26 14:21:01
+*/
+/* 避免footer太靠浏览器下端 */
+.footer{
+    padding-bottom: 10px;
+}
+/* 友情链接样式 */
+.footer .links{
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
+.footer .links .link{
+   padding: 0 10px;
+}
+/* 版权所有样式 */
+.footer .copyright{
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}

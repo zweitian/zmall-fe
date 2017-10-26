@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-24 11:56:09
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-25 00:35:30
+* @Last Modified time: 2017-10-26 14:11:00
 */
 'use strict'
 console.log('global chunk');
@@ -10,3 +10,5 @@ console.log('global chunk');
 require('./layout.css');
 //引入font-awesome图标的css
 require('node_modules/font-awesome/css/font-awesome.min.css');
+//引入footer样式
+require('./footer/index.css');
