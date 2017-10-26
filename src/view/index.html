@@ -3,7 +3,8 @@
     <head>
         <!-- 使用html-loader打包通用的html头文件 -->
         <%= require('html-loader!./layout/head-common.html')  %>
-        <title>ZMALL电商平台</title>
+        <!-- 使用htmlWebpackPlugin配置中的title -->
+        <title><%= htmlWebpackPlugin.options.title%></title>
     </head>
     <body>
         <%= require('html-loader!./layout/nav.html')  %>

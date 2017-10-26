@@ -4,14 +4,25 @@
         <!-- 使用html-loader打包通用的html头文件 -->
         <%= require('html-loader!./layout/head-common.html')  %>
         <!-- 使用htmlWebpackPlugin配置中的title -->
-        <title><%= htmlWebpackPlugin.options.title%></title>
+        <title><%= htmlWebpackPlugin.options.title%> - zmall电商平台</title>
     </head>
     <body>
-        <%= require('html-loader!./layout/nav.html')  %>
-        <%= require('html-loader!./layout/header.html')  %>
+        <%= require('html-loader!./layout/nav-simple.html')  %>
         <div class="page-wrap w">
-            <%= require('html-loader!./layout/nav-side.html')  %>
-            <div class="content with-nav">test</div>
+            <!-- 注册成功显示的提示语 -->
+            <div class="result-con register-success">
+                <h1 class="result-title">恭喜你,注册成功!</h1>
+                <div class="result-content">
+                    <a href="./index.html" class="link">回到首页</a>
+                </div>
+            </div>
+            <!-- 默认显示的提示语 -->
+            <div class="result-con default-success">
+                <h1 class="result-title">恭喜你,操作成功!</h1>
+                <div class="result-content">
+                    <a href="./index.html" class="link">回到首页</a>
+                </div>
+            </div>
         </div>
         <%= require('html-loader!./layout/footer.html')  %>
     </body>
