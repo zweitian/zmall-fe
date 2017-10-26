@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-24 11:19:12
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-24 16:23:59
+* @Last Modified time: 2017-10-26 21:21:10
 */
 var webpack                = require('webpack');
  var ExtractTextPlugin      = require("extract-text-webpack-plugin");
@@ -11,10 +11,11 @@ var webpack                = require('webpack');
  var WEBPACK_ENV            = process.env.WEBPACK_ENV || 'dev';
  console.log(WEBPACK_ENV);
  //返回HtmlWebpackPlugin所需html配置
- function getHtmlConfig(name){
+ function getHtmlConfig(name,title){
     return {
             template    : './src/view/'+ name +'.html',//文件模版地址
             filename    : 'view/'+ name +'.html',//输出文件地址
+            title       : title,
             inject      : true,//引入js文件位于body标签最下面
             hash        : true,
             chunks      : ['common',name]//引入common模块js和name模块的js
@@ -23,9 +24,10 @@ var webpack                = require('webpack');
  //webpack config
  var config = {
      entry: {
-        'common':['./src/page/common/index.js'],
-        'index':['./src/page/index/index.js'],
-        'login':['./src/page/login/login.js']
+        'common'    : ['./src/page/common/index.js'],
+        'index'     : ['./src/page/index/index.js'],
+        'login'     : ['./src/page/login/index.js'],
+        'result'    : ['./src/page/result/index.js']
      },
      output: {
          path: './dist',
@@ -38,6 +40,8 @@ var webpack                = require('webpack');
     },
     module: {
         loaders: [
+            //读取html的loader
+            { test: /\.string$/, loader: 'html-loader'},
             //读取css的loader
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
             //图片、字体文件loader
@@ -63,8 +67,9 @@ var webpack                = require('webpack');
         //css单独打包插件
         new ExtractTextPlugin("css/[name].css"),
         //js文件与js文件引用的css文件打包进模版html中
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login')),
+        new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('login','用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
     ]
  };
  //开发环境为dev webpack-dev-server打包入common模块中
