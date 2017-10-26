@@ -1,0 +1,30 @@
+/*
+* @Author: ztian
+* @Date:   2017-10-26 21:23:53
+* @Last Modified by:   ztian
+* @Last Modified time: 2017-10-26 21:52:05
+*/
+.page-wrap{
+    padding: 30px 0;
+    margin-top: 20px;
+    text-align: center;
+    background: #fff;
+}
+/* 隐藏操作提示语,在js中根据类型显示 */
+.result-con{
+    display: none;
+}
+/* 操作结果标题样式 */
+.result-con .result-title{
+    color: #555;
+}
+/* 操作结果内容样式 */
+.result-con .result-content{
+    margin-top: 20px;
+}
+/* 操作结果内容样式 返回链接样式 */
+.result-con .result-content .link{
+    margin: 0px 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+}
