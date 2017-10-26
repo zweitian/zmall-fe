@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-25 00:23:13
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-25 00:37:32
+* @Last Modified time: 2017-10-26 13:42:11
 */
 .nav{
     background: #eee;
@@ -10,14 +10,14 @@
     line-height: 30px;
 }
 /* 用户部分 */
-.nav .user{
+.nav .user-info{
     float: left;
 }
 /* 用户登录状态隐藏 */
 .nav .user.login{
     display: none;
 }
-/* span间隔 */
+/* 登录间隔 */
 .nav .user .link{
     margin-right: 5px;
 }
