@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-24 11:28:35
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-27 13:22:25
+* @Last Modified time: 2017-10-27 15:44:28
 */
 'use strict'
 //引入result.html的css
@@ -54,7 +54,7 @@ var page = {
         if(validateResult.status){
             _user.login(formData,function(res){
                 //服务端登录成功,若是由别的页面进来的，返回原来的页面，没有则返回首页
-                window.location.herf = _mm.getUrlParam('redirect') || './index.html'
+                window.location.href = _mm.getUrlParam('redirect') || './index.html';
             },function(errMsg){
                 //服务器端出错
                 formError.show(errMsg);

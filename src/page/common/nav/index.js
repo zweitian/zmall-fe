@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-25 00:22:45
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-26 13:57:12
+* @Last Modified time: 2017-10-27 17:22:02
 */
 'use strict'
 require('./index.css');
@@ -27,7 +27,7 @@ var nav = {
         });
         //注册点击事件
         $('.js-register').click(function(){
-            window.location.href = './register.html';
+            window.location.href = './user-register.html';
         });
         //退出登录点击事件
         $('.js-logout').click(function(){
@@ -44,7 +44,7 @@ var nav = {
     loadUserInfo : function(){
         //用户已登录,返回User对象
         _user.checkLogin(function(res){
-            $('.user.not-login').hide().sublings('.user.login').show()
+            $('.user.not-login').hide().siblings('.user.login').show()
                 .find('.username').text(res.username);
         },function(errMsg){
             //用户未登录 do noting
