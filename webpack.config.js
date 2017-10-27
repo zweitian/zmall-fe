@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-24 11:19:12
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-26 21:21:10
+* @Last Modified time: 2017-10-26 22:55:32
 */
 var webpack                = require('webpack');
  var ExtractTextPlugin      = require("extract-text-webpack-plugin");
@@ -24,10 +24,10 @@ var webpack                = require('webpack');
  //webpack config
  var config = {
      entry: {
-        'common'    : ['./src/page/common/index.js'],
-        'index'     : ['./src/page/index/index.js'],
-        'login'     : ['./src/page/login/index.js'],
-        'result'    : ['./src/page/result/index.js']
+        'common'        : ['./src/page/common/index.js'],
+        'index'         : ['./src/page/index/index.js'],
+        'user-login'    : ['./src/page/user-login/index.js'],
+        'result'        : ['./src/page/result/index.js']
      },
      output: {
          path: './dist',
@@ -68,7 +68,7 @@ var webpack                = require('webpack');
         new ExtractTextPlugin("css/[name].css"),
         //js文件与js文件引用的css文件打包进模版html中
         new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('login','用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
         new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
     ]
  };

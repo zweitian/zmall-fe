@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-20 11:18:01
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-24 22:59:14
+* @Last Modified time: 2017-10-26 22:46:50
 */
 'use strict';
 var Hogan = require('hogan');
@@ -79,7 +79,7 @@ var _mm={
         alert(msg || '操作失败! ');
     },
     doLogin : function(){
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     goHome  : function(){
         window.location.href = './index.html';
