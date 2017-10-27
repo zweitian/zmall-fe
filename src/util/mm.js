@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-20 11:18:01
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-26 22:46:50
+* @Last Modified time: 2017-10-27 13:04:33
 */
 'use strict';
 var Hogan = require('hogan');
@@ -26,10 +26,12 @@ var _mm={
                 else if(10 == res.status){
                     _this.doLogin();
                 }
+                //状态1 请求服务器数据出错
                 else if (1 == res.status) {
                     typeof param.error === 'function' && param.error(res.msg);
                 }
             },
+            //ajax请求失败
             error       : function(err){
                 typeof param.error === 'function' && param.error(err.statusText);
             }

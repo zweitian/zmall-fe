@@ -2,12 +2,23 @@
 * @Author: ztian
 * @Date:   2017-10-26 11:46:34
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-26 17:11:24
+* @Last Modified time: 2017-10-27 12:41:50
 */
 'use strict';
 var _mm = require('util/mm.js');
 var _user = {
-     checkLogin : function(resolve,reject){
+    //用户登录
+    login : function(userInfo,resolve,reject){
+        _mm.request({
+            url     : _mm.getServerUrl('/user/login.do'),
+            data    : userInfo,
+            method  : 'POST',
+            success : resolve,
+            error   : reject
+        });
+    },
+    //检测登录状态
+    checkLogin : function(resolve,reject){
         _mm.request({
             url     : _mm.getServerUrl('/user/get_user_info.do'),
             method  : 'POST',
