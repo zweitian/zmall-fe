@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-25 00:22:45
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-28 11:29:38
+* @Last Modified time: 2017-10-28 12:29:22
 */
 'use strict'
 require('./index.css');
@@ -43,7 +43,7 @@ var nav = {
     //读取登录用户信息
     loadUserInfo : function(){
         //用户已登录,返回User对象
-        _user.checkLogin(function(res){
+        _user.getUserInfo(function(res){
             $('.user.not-login').hide().siblings('.user.login').show()
                 .find('.username').text(res.username);
         },function(errMsg){

@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-26 11:46:34
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-28 11:30:46
+* @Last Modified time: 2017-10-28 12:31:46
 */
 'use strict';
 var _mm = require('util/mm.js');
@@ -31,15 +31,6 @@ var _user = {
     logout : function(resolve,reject){
         _mm.request({
             url     : _mm.getServerUrl('/user/logout.do'),
-            method  : 'POST',
-            success : resolve,
-            error   : reject
-        });
-    },
-    //检测登录状态
-    checkLogin : function(resolve,reject){
-        _mm.request({
-            url     : _mm.getServerUrl('/user/get_user_info.do'),
             method  : 'POST',
             success : resolve,
             error   : reject
@@ -90,9 +81,20 @@ var _user = {
             error   : reject
         });
     },
+    //获取用户信息
     getUserInfo : function(resolve,reject){
          _mm.request({
             url     : _mm.getServerUrl('/user/get_user_info.do'),
+            method  : 'POST',
+            success : resolve,
+            error   : reject
+        });
+    },
+    //更新用户信息
+    updateUserInfo :function(userInfo,resolve,reject){
+         _mm.request({
+            url     : _mm.getServerUrl('/user/update_information.do'),
+            data    : userInfo,
             method  : 'POST',
             success : resolve,
             error   : reject
