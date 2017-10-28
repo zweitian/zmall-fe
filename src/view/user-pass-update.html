@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 使用html-loader打包通用的html头文件 -->
+        <%= require('html-loader!./layout/head-common.html')  %>
+        <!-- 使用htmlWebpackPlugin配置中的title -->
+        <title><%= htmlWebpackPlugin.options.title%></title>
+    </head>
+    <body>
+        <!-- 登录注册导航条 -->
+        <%= require('html-loader!./layout/nav.html')  %>
+        <!-- 搜索导航条导航条 -->
+        <%= require('html-loader!./layout/header.html')  %>
+        <!-- 面包屑导航 -->
+        <div class="crumb">
+            <div class="w">
+                <div class="crumb-con">
+                    <a class="link" href="./index.html">ZMALL</a>
+                    <span>></span>
+                    <span class="link-text"><%= htmlWebpackPlugin.options.title%></span>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrap w">
+            <!--左侧菜单导航条-->
+            <%= require('html-loader!./layout/nav-side.html')  %>
+            <div class="content with-nav">
+                <div class="panel">
+                    <div class="panel-title">修改密码</div>
+                    <div class="panel-body">
+                        <div class="user-info">
+                                <div class="form-line">
+                                    <span class="label">旧密码:</span>
+                                    <input type="password" class="input" id="password-old" autocomplete="off">
+                                </div>
+                                <div class="form-line">
+                                    <span class="label">新密码:</span>
+                                    <input type="password" class="input" id="password-new" autocomplete="off" >
+                                </div>
+                                <div class="form-line">
+                                    <span class="label">确认密码:</span>
+                                    <input type="password" class="input" id="password-confirm" autocomplete="off">
+                                </div>
+                                <div class="form-line">
+                                    <a class="btn btn-mini btn-submit">提交修改</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--脚部页面-->
+        <%= require('html-loader!./layout/footer.html')  %>
+    </body>
+</html>

@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-20 11:18:01
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-28 11:30:54
+* @Last Modified time: 2017-10-28 14:36:56
 */
 'use strict';
 var Hogan = require('hogan');
@@ -70,6 +70,10 @@ var _mm={
         //邮箱校验
         if('email' === type){
             return /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/.test(value);
+        }
+        //密码校验,位数不少于6位
+        if('password' === type){
+            return /\S{6,}/.test(value);
         }
     },
     //操作成功提示

@@ -1,8 +1,8 @@
 /*
 * @Author: ztian
-* @Date:   2017-10-28 00:28:58
+* @Date:   2017-10-28 14:01:37
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-28 15:09:48
+* @Last Modified time: 2017-10-28 14:22:30
 */
 .form-line{
     height: 30px;
@@ -11,9 +11,9 @@
     margin-bottom: 10px;
 }
 .form-line .label{
-    width: 50px;
+    width: 70px;
     display: inline-block;
-    text-align: left;
+    text-align: right;
 }
 /* 回填输入框样式 */
 .input{
@@ -22,6 +22,7 @@
     line-height: 25px;
     font-size: 13px;
     width: 200px;
+    margin-left: 10px;
 }
 /* 修改按钮样式 */
 .btn-submit{

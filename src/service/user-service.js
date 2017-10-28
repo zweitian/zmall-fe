@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-26 11:46:34
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-28 12:31:46
+* @Last Modified time: 2017-10-28 14:44:09
 */
 'use strict';
 var _mm = require('util/mm.js');
@@ -95,6 +95,16 @@ var _user = {
          _mm.request({
             url     : _mm.getServerUrl('/user/update_information.do'),
             data    : userInfo,
+            method  : 'POST',
+            success : resolve,
+            error   : reject
+        });
+    },
+    //更新用户信息 passInfo{passwordOld:xxx,passwordNew:xxx}
+    updatePassword :function(passInfo,resolve,reject){
+         _mm.request({
+            url     : _mm.getServerUrl('/user/reset_password.do'),
+            data    : passInfo,
             method  : 'POST',
             success : resolve,
             error   : reject

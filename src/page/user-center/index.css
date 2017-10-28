@@ -2,21 +2,20 @@
 * @Author: ztian
 * @Date:   2017-10-28 00:16:46
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-28 12:43:39
+* @Last Modified time: 2017-10-28 15:07:44
 */
 .form-line{
     height: 30px;
     line-height: 30px;
-    font-size: 14px;
+    font-size: 13px;
 }
 .form-line .label{
     width: 60px;
     display: inline-block;
-    text-align: center;
+    text-align: left;
 }
 /* 修改按钮样式 */
 .btn-submit{
-    width: 50px;
+    width: 40px;
     text-align: center;
-    margin-left: 10px;
 }

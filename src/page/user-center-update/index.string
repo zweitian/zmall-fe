@@ -20,6 +20,6 @@
         <input type="text" class="input" id="answer" autocomplete="off" value="{{answer}}">
     </div>
     <div class="form-line">
-        <span class="btn btn-mini btn-submit">提交修改</span>
+        <a class="btn btn-mini btn-submit">提交修改</a>
     </div>
 </div>
