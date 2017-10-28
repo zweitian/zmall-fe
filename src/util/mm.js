@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-20 11:18:01
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-27 13:04:33
+* @Last Modified time: 2017-10-28 11:30:54
 */
 'use strict';
 var Hogan = require('hogan');
@@ -13,7 +13,7 @@ var _mm={
     request : function(param){
         var _this=this;
         $.ajax({
-            type        : param.method    || 'get',
+            type        : param.method    || 'GET',
             url         : param.url       || '',
             dataType    : param.dataType  || 'json',
             data        : param.data      || '',

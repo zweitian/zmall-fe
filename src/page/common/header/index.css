@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-26 14:33:22
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-26 16:35:02
+* @Last Modified time: 2017-10-28 01:03:37
 */
 /* ZMALL logo样式 */
 .header .logo{
@@ -13,6 +13,7 @@
     font-size: 36px;
     color: #c60023;
     font-weight: bold;
+    text-decoration: none;/* 去除下划线 */
 }
 /* 搜索条(输入框 搜索按钮)样式 */
 .header .search-con{
@@ -34,4 +35,14 @@
     height: 44px;
     line-height: 44px;
     width: 80px;
+}
+/* 面包屑导航 */
+.crumb{
+    margin-bottom: 10px;
+    height: 50px;
+    line-height: 50px;
+    background: #eee;
+    color: #888;
+    font-size: 13px;
+    border-top: 2px solid #c60023;
 }

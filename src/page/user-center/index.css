@@ -1,0 +1,16 @@
+/*
+* @Author: ztian
+* @Date:   2017-10-28 00:16:46
+* @Last Modified by:   ztian
+* @Last Modified time: 2017-10-28 11:04:23
+*/
+.form-line{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+.form-line .label{
+    width: 60px;
+    display: inline-block;
+    text-align: center;
+}

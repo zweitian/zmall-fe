@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-26 11:46:34
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-27 21:14:35
+* @Last Modified time: 2017-10-28 11:30:46
 */
 'use strict';
 var _mm = require('util/mm.js');
@@ -85,6 +85,14 @@ var _user = {
         _mm.request({
             url     : _mm.getServerUrl('/user/forget_reset_password.do'),
             data    : userInfo,
+            method  : 'POST',
+            success : resolve,
+            error   : reject
+        });
+    },
+    getUserInfo : function(resolve,reject){
+         _mm.request({
+            url     : _mm.getServerUrl('/user/get_user_info.do'),
             method  : 'POST',
             success : resolve,
             error   : reject
