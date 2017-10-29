@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-26 14:33:15
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-28 11:29:34
+* @Last Modified time: 2017-10-29 15:56:09
 */
 'use strict'
 require('./index.css');
@@ -12,8 +12,10 @@ var _mm     = require('util/mm.js');
 var header = {
     init : function(){
         this.bindEvent();
+        this.onload();
     },
     onload : function(){
+        //搜索关键字回填
         var keyword = _mm.getUrlParam('keyword');
         if(keyword){
             $('#search-input').val(keyword);
