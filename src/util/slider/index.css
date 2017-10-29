@@ -1,0 +1,43 @@
+/*
+* @Author: ztian
+* @Date:   2017-10-29 10:47:00
+* @Last Modified by:   ztian
+* @Last Modified time: 2017-10-29 12:32:58
+*/
+/* banner */
+.banner{
+    position: relative; 
+    overflow: hidden; 
+}
+.banner li { 
+    list-style: none; 
+}
+.banner ul li { 
+    float: left; 
+}
+/* 引导的小圆点 */
+.banner .dots {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+}
+.banner .dots li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    text-indent: -999em;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: .4;
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+}
+.banner .dots li.active {
+    background: #fff;
+    opacity: 1;
+}
