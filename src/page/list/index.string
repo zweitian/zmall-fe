@@ -13,3 +13,6 @@
         </div>
     </li>
 {{/list}}
+{{^list}}
+    <p class="err-tip">很抱歉,找不到你所需要商品</p>
+{{/list}}

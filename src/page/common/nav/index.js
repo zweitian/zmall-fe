@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-25 00:22:45
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-28 12:29:22
+* @Last Modified time: 2017-10-30 20:21:17
 */
 'use strict'
 require('./index.css');
@@ -53,10 +53,10 @@ var nav = {
     //读取购物车信息
     loadCartCount : function(){
         _cart.getCartCount(function(res){
-           $('.nav cart-count').text(res||0);
+           $('.nav .cart-count').text(res||0);
         },function(errMsg){
             //读取失败默认赋值为0
-            $('.nav cart-count').text(0);
+            $('.nav .cart-count').text(0);
         });
     }
 }

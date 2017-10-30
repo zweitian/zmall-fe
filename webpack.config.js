@@ -2,9 +2,9 @@
 * @Author: ztian
 * @Date:   2017-10-24 11:19:12
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-29 15:41:30
+* @Last Modified time: 2017-10-30 14:31:16
 */
-var webpack                = require('webpack');
+ var webpack                = require('webpack');
  var ExtractTextPlugin      = require("extract-text-webpack-plugin");
  var HtmlWebpackPlugin      = require('html-webpack-plugin');
  //获取webpack-dev-server环境变量
@@ -27,6 +27,7 @@ var webpack                = require('webpack');
         'common'            : ['./src/page/common/index.js'],
         'index'             : ['./src/page/index/index.js'],
         'list'              : ['./src/page/list/index.js'],
+        'detail'            : ['./src/page/detail/index.js'],
         'user-login'        : ['./src/page/user-login/index.js'],
         'user-register'     : ['./src/page/user-register/index.js'],
         'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
@@ -75,6 +76,7 @@ var webpack                = require('webpack');
         //js文件与js文件引用的css文件打包进模版html中
         new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
         new HtmlWebpackPlugin(getHtmlConfig('list','商品列表页')),
+        new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情页')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','找回密码')),
