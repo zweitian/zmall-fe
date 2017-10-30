@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-29 22:59:02
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-30 00:42:05
+* @Last Modified time: 2017-10-30 11:55:44
 */
 'use strict';
 require('./index.css');
@@ -11,12 +11,23 @@ var templatePagination  = require('./index.string');
 var _mm                 = require('util/mm.js');
 //定义分页组件类
 var Pagination = function(){
+    var _this = this;
     this.defaultOption = {
         container       : null,
         pageNum         : 1,
         pageRange       : 3,
         onSelectPage    : null
     };
+    //对p-item进行事件点击代理,会回调onSelectPage函数,onSelectPage由用户设置传入
+    $(document).on('click' , '.pg-item' , function(){
+        var $this=$(this);
+        if($this.hasClass('disabled') || $this.hasClass('active')){
+            return ;
+        } 
+        //onSelectPage为一个函数时,以当前点击页作为参数调用onSelectPage函数
+        typeof _this.option.onSelectPage === 'function' ?
+         _this.option.onSelectPage($this.data('value')): null ;
+    })
 }
 //根据用户设置渲染分页
 Pagination.prototype.render = function(userOption){
@@ -26,9 +37,9 @@ Pagination.prototype.render = function(userOption){
         return ;
     }
     //判断是否只有一页
-   /* if(this.option.pages <= 1){
+    if(this.option.pages <= 1){
         return ;
-    }*/
+    }
     //往分页容器放入分页内容
     this.option.container.html(this.getPaginationHtml());
 }
@@ -38,8 +49,8 @@ Pagination.prototype.getPaginationHtml = function(){
         pageArray   = [],
         option      = this.option,
         //根据page设置的范围(pageRange)确定分页开始值和结束值
-        start       = option.pageNum-option.pageRange< 0 ? 1 :option.pageNum-option.pageRange,
-        end         = option.pageNum+option.pageRange>option.pages ? option.pages :option.pageNum+option.pageRange;
+        start       = (option.pageNum-option.pageRange<1 ? 1 :option.pageNum-option.pageRange),
+        end         = (option.pageNum+option.pageRange>option.pages ? option.pages :option.pageNum+option.pageRange);
     //pageArray数组放入上一页对象
     pageArray.push({
         name        :'上一页',
@@ -51,7 +62,7 @@ Pagination.prototype.getPaginationHtml = function(){
         pageArray.push({
                 name    : i,
                 value   : i,
-                avtive  : i===option.pageNum//判断是否为选中页
+                active  : i===option.pageNum//判断是否为选中页
         });
     }
     //pageArray数组放入下一页对象

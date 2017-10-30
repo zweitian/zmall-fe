@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-29 15:41:44
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-30 00:36:04
+* @Last Modified time: 2017-10-30 12:03:42
 */
 'use strict'
 require('./index.css');
@@ -25,7 +25,7 @@ var page = {
         categoryId  : _mm.getUrlParam('categoryId') || '',
         keyword     : _mm.getUrlParam('keyword')    || '',
         pageNum     : _mm.getUrlParam('pageNum')    || 1 , //默认请求页数为1
-        pageSize    : _mm.getUrlParam('pageSize')   || 20,//默认请求商品数量为10
+        pageSize    : _mm.getUrlParam('pageSize')   || 15,//默认请求商品数量为10
         orderBy     : _mm.getUrlParam('orderBy')    || 'default',
       }
     },
@@ -36,12 +36,11 @@ var page = {
     onLoad: function(){
        this.loadList();
     },
-    //给排序按钮添加点击事件,默认
+    //给排序按钮添加点击事件
     bindEvent: function(){
       var _this =this;
       $('.sort-item').click(function(){
           var $this = $(this);
-          _this.data.listParam.pageNum = 1;
           //点击默认排序按钮
           if($this.data('type') === 'default'){
               //默认排序已是点击状态,直接return
@@ -51,6 +50,8 @@ var page = {
                 $this.addClass('active').siblings().removeClass('active desc asc');
                 //改变商品排序属性
                 _this.data.listParam.orderBy = 'default';
+                //改变分页属性
+                _this.data.listParam.pageNum = 1;
               }
           }
           //点击价格排序按钮
@@ -62,11 +63,15 @@ var page = {
               $this.removeClass('desc').addClass('asc');
               //改变商品排序属性
               _this.data.listParam.orderBy = 'price_asc';
+              //改变分页属性
+              _this.data.listParam.pageNum = 1;
             }else{
               //由升序改为降序
                $this.removeClass('asc').addClass('desc');
                //改变商品排序属性
               _this.data.listParam.orderBy = 'price_desc';
+              //改变分页属性
+              _this.data.listParam.pageNum = 1;
             }
           }
           //重新读取商品列表信息
@@ -105,11 +110,17 @@ var page = {
           });
     },
     loadPagination:function(pageInfo){
+        var _this = this;
         //pagination是否已经初始化
         this.pagination ? '':(this.pagination = new Pagination());
         //使用pagination对象渲染分页组件
         this.pagination.render($.extend({},pageInfo,{
-            container : $('.pagination')
+            container : $('.pagination'),
+            onSelectPage : function(pageNum){
+              //点击页面按钮时会触发onSelectPage的回调
+              _this.data.listParam.pageNum = pageNum;
+              _this.loadList();
+            } 
         }));
     }
 } 
