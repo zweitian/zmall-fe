@@ -20,73 +20,8 @@
             </div>
         </div>
         <!-- 商品详细信息容器 -->
-        <div class="cart-wrap w">
-            <!-- 购物车头部导航条部分 -->
-           <div class="cart-header">
-               <table class="cart-table">
-                   <tr>
-                       <th class="cart-cell cart-check">
-                           <label>
-                               <input type="checkbox" class="cart-selected-all"/>
-                               <span>全选</span>
-                           </label>
-                       </th>
-                       <th class="cart-cell cart-info">商品信息</th>
-                       <th class="cart-cell cart-price">单价</th>
-                       <th class="cart-cell cart-count">数量</th>
-                       <th class="cart-cell cart-total">合计</th>
-                       <th class="cart-cell cart-opera">操作</th>
-                   </tr>
-               </table>
-           </div>
-           <!-- 购物车列表部分 -->
-           <div class="cart-list">
-               <table class="cart-table">
-                   <tr>
-                        <td class="cart-cell cart-check">
-                               <input type="checkbox" class="cart-selected"/>
-                       </td>
-                       <td class="cart-cell cart-img">
-                           <a href="" target="_blank">
-                               <img src="http://img.happymmall.com/f35cde2b-2f4e-4e2e-80db-a358e8bb7477.jpg" alt="" class="p-img">
-                           </a>
-                       </td>
-                       <td class="cart-cell cart-info">
-                           <a href="" class="link p-name">xxxxxxx</a>
-                       </td>
-                       <td class="cart-cell cart-price">¥2000</td>
-                       <td class="cart-cell cart-count">
-                           <span class="count-btn">-</span>
-                           <input class="count-input" type="text" value="111">
-                           <span class="count-btn">+</span>
-                       </td>
-                       <td class="cart-cell cart-total">¥4000</td>
-                       <td class="cart-cell cart-opera">
-                           <a href="" class="link cart-delte">删除</a>
-                       </td>
-                   </tr>
-               </table>
-           </div>
-           <!-- 购物车底部部分 -->
-           <div class="cart-footer">
-               <div class="select-con">
-                   <label>
-                       <input type="checkbox" class="cart-selct-all">
-                       <span>全选</span>
-                   </label>
-               </div>
-               <div class="delete-con">
-                   <a href="" class="link cart-delete-selected">
-                       <i class="fa fa-trash-o"></i>
-                       <span>删除选中</span>
-                   </a>
-               </div>
-               <div class="submit-con">
-                   <span>总价:</span>
-                   <span class="submit-total">¥4000</span>
-                   <span class="btn btn-submit">去结算</span>
-               </div>
-           </div>
+        <div class="page-wrap w">
+
         </div>
         <!--脚部页面-->
         <%= require('html-loader!./layout/footer.html')  %>

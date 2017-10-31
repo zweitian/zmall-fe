@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-29 15:41:44
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-30 12:03:42
+* @Last Modified time: 2017-10-31 15:40:58
 */
 'use strict'
 require('./index.css');
@@ -79,31 +79,31 @@ var page = {
       });
     },
     loadList: function(){
-          var _this = this,
-          listParam = this.data.listParam,
-          listHtml  = '',
-          $pListCon = $('.p-list-con');
-          //加载loading的div
-          $pListCon.html('<div class="loading"></div>');
-          //去除listParam中无用请求参数
-          listParam.categoryId ? (delete listParam.keyword):(delete listParam.categoryId);
-          //请求服务器商品列表
-          _product.getProductList(listParam,function(res){
-          //根据服务端返回数据渲染购物车html模版
-          listHtml = _mm.renderHtml(templateIndex,{
-            list : res.list
-          });
-          //渲染后的html模版商品容器中
-          $pListCon.html(listHtml);
-          //封装分页信息,并使用分页信息渲染分页组件
-          _this.loadPagination({
-              hasPreviousPage : res.hasPreviousPage,
-              prePage         : res.prePage,
-              hasNextPage     : res.hasNextPage,
-              nextPage        : res.nextPage,
-              pageNum         : res.pageNum,
-              pages           : res.pages
-          });
+            var _this = this,
+            listParam = this.data.listParam,
+            listHtml  = '',
+            $pListCon = $('.p-list-con');
+            //加载loading的div
+            $pListCon.html('<div class="loading"></div>');
+            //去除listParam中无用请求参数
+            listParam.categoryId ? (delete listParam.keyword):(delete listParam.categoryId);
+            //请求服务器商品列表
+            _product.getProductList(listParam,function(res){
+            //根据服务端返回数据渲染购物车html模版
+            listHtml = _mm.renderHtml(templateIndex,{
+              list : res.list
+            });
+            //渲染后的html模版商品容器中
+            $pListCon.html(listHtml);
+            //封装分页信息,并使用分页信息渲染分页组件
+            _this.loadPagination({
+                hasPreviousPage : res.hasPreviousPage,
+                prePage         : res.prePage,
+                hasNextPage     : res.hasNextPage,
+                nextPage        : res.nextPage,
+                pageNum         : res.pageNum,
+                pages           : res.pages
+            });
           },function(errMsg){
               //请求服务器数据失败
               _mm.errorTips(errMsg);
