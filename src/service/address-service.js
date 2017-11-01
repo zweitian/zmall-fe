@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-31 23:58:49
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-11-01 20:35:51
+* @Last Modified time: 2017-11-01 20:49:06
 */
 'use strict';
 var _mm = require('util/mm.js');
@@ -41,6 +41,17 @@ var _address = {
             url     : _mm.getServerUrl('/shipping/update.do'),
             method  : 'POST',
             data    : receiverInfo,
+            success : resolve,
+            error   : reject
+        });
+    },
+    deleteAddress : function(shippingId,resolve,reject){
+          _mm.request({
+            url     : _mm.getServerUrl('/shipping/del.do'),
+            method  : 'POST',
+            data    : {
+                shippingId :shippingId
+            },
             success : resolve,
             error   : reject
         });
