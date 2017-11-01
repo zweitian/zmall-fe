@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-29 15:41:44
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-31 15:40:58
+* @Last Modified time: 2017-11-01 23:37:11
 */
 'use strict'
 require('./index.css');
@@ -89,21 +89,21 @@ var page = {
             listParam.categoryId ? (delete listParam.keyword):(delete listParam.categoryId);
             //请求服务器商品列表
             _product.getProductList(listParam,function(res){
-            //根据服务端返回数据渲染购物车html模版
-            listHtml = _mm.renderHtml(templateIndex,{
-              list : res.list
-            });
-            //渲染后的html模版商品容器中
-            $pListCon.html(listHtml);
-            //封装分页信息,并使用分页信息渲染分页组件
-            _this.loadPagination({
-                hasPreviousPage : res.hasPreviousPage,
-                prePage         : res.prePage,
-                hasNextPage     : res.hasNextPage,
-                nextPage        : res.nextPage,
-                pageNum         : res.pageNum,
-                pages           : res.pages
-            });
+                //根据服务端返回数据渲染购物车html模版
+                listHtml = _mm.renderHtml(templateIndex,{
+                  list : res.list
+                });
+                //渲染后的html模版商品容器中
+                $pListCon.html(listHtml);
+                //封装分页信息,并使用分页信息渲染分页组件
+                _this.loadPagination({
+                    hasPreviousPage : res.hasPreviousPage,
+                    prePage         : res.prePage,
+                    hasNextPage     : res.hasNextPage,
+                    nextPage        : res.nextPage,
+                    pageNum         : res.pageNum,
+                    pages           : res.pages
+                });
           },function(errMsg){
               //请求服务器数据失败
               _mm.errorTips(errMsg);
@@ -113,7 +113,7 @@ var page = {
         var _this = this;
         //pagination是否已经初始化
         this.pagination ? '':(this.pagination = new Pagination());
-        //使用pagination对象渲染分页组件
+        //使用pagination对象渲染分页组件,container为用于加载分页插件的容器,Onselectpage中pageNum为当前选中页
         this.pagination.render($.extend({},pageInfo,{
             container : $('.pagination'),
             onSelectPage : function(pageNum){

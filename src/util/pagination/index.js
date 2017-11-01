@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-29 22:59:02
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-30 11:55:44
+* @Last Modified time: 2017-11-01 23:43:47
 */
 'use strict';
 require('./index.css');
@@ -16,7 +16,7 @@ var Pagination = function(){
         container       : null,
         pageNum         : 1,
         pageRange       : 3,
-        onSelectPage    : null
+        onSelectPage    : null//回调
     };
     //对p-item进行事件点击代理,会回调onSelectPage函数,onSelectPage由用户设置传入
     $(document).on('click' , '.pg-item' , function(){

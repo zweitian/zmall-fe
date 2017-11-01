@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-31 20:55:32
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-11-01 14:01:40
+* @Last Modified time: 2017-11-02 00:03:58
 */
 'use strict';
 var _mm = require('util/mm.js');
@@ -20,6 +20,16 @@ var _order = {
          _mm.request({
             url     : _mm.getServerUrl('/order/create.do'),
             data    : orderInfo,
+            method  : 'POST',
+            success : resolve,
+            error   : reject
+        });
+    },
+    //获取订单列表
+    getOrderList: function(listParam,resolve,reject){
+         _mm.request({
+            url     : _mm.getServerUrl('/order/list.do'),
+            data    : listParam,
             method  : 'POST',
             success : resolve,
             error   : reject
