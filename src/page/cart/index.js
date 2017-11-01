@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-30 20:41:28
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-31 20:22:22
+* @Last Modified time: 2017-10-31 23:27:05
 */
 'use strict'
 require('./index.css');
@@ -145,7 +145,7 @@ var page = {
          //提交购物车选择商品到订单确认页
         $(document).on('click','.submit-con .btn-submit',function(){
             if(_this.data.cartInfo.cartTotalPrice>0){
-                window.location.href = './comfirm.html';
+                window.location.href = './order-confirm.html';
             }else{
                 _mm.errorTips('请选择需要结算的商品');
             }
