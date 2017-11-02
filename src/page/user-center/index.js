@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-28 00:16:39
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-28 11:34:49
+* @Last Modified time: 2017-11-02 17:54:32
 */
 'use strict'
 require('./index.css');
@@ -30,8 +30,9 @@ var page = {
        });
        this.loadUserInfo();
     },
+    //读取用户详细信息,若没有登录的话强制登录
     loadUserInfo :function(){
-      _user.getUserInfo(function(res){
+      _user.getUserInformation(function(res){
         //使用服务端传过来的user对象渲染html模版
         var userHtml = _mm.renderHtml(templateIndex,res);
         //渲染后的html模版放入panel标签
