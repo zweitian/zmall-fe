@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-31 20:43:45
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-11-01 21:26:31
+* @Last Modified time: 2017-11-02 13:19:29
 */
 'use strict'
 require('./index.css');
@@ -52,7 +52,7 @@ var page = {
                 _order.createOrder({
                     shippingId : shippingId
                 },function(res){
-                    window.location.href = './payment.html?orderNumber=' + res.orderNo;
+                    window.location.href = './payment.html?orderNo=' + res.orderNo;
                 },function(errMsg){
                     _mm.errorTips(errMsg);
                 })
