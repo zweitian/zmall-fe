@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-24 11:19:12
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-11-02 16:07:04
+* @Last Modified time: 2017-11-02 22:41:01
 */
  var webpack                = require('webpack');
  var ExtractTextPlugin      = require("extract-text-webpack-plugin");
@@ -15,6 +15,7 @@
     return {
             template    : './src/view/'+ name +'.html',//文件模版地址
             filename    : 'view/'+ name +'.html',//输出文件地址
+            favicon     : './favicon.ico',
             title       : title,
             inject      : true,//引入js文件位于body标签最下面
             hash        : true,
@@ -26,6 +27,7 @@
      entry: {
         'common'            : ['./src/page/common/index.js'],
         'index'             : ['./src/page/index/index.js'],
+        'about'             : ['./src/page/about/index.js'],
         'list'              : ['./src/page/list/index.js'],
         'detail'            : ['./src/page/detail/index.js'],
         'cart'              : ['./src/page/cart/index.js'],
@@ -42,9 +44,10 @@
         'result'            : ['./src/page/result/index.js']
      },
      output: {
-         path: './dist',
-         publicPath : '/dist',
-         filename: 'js/[name].js'
+         path       : __dirname + '/dist/',
+         //WEBPACK_ENV === 'online' ? '//s.happymmall.com/admin-fe/dist/' : '/dist/'
+         publicPath :  WEBPACK_ENV === 'online' ? '//s.happymmall.com/admin-fe/dist/' : '/dist/',
+         filename   : 'js/[name].js'
      },
      //jquery全局变量设置
      externals: {
@@ -53,7 +56,14 @@
     module: {
         loaders: [
             //读取html的loader
-            { test: /\.string$/, loader: 'html-loader'},
+            { 
+                test: /\.string$/, 
+                loader: 'html-loader',
+                query:{
+                    minimize : true,
+                    removeAttributeQuotes :false //不删除属性上的""
+                }
+            },
             //读取css的loader
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
             //图片、字体文件loader
@@ -82,6 +92,7 @@
         new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
         new HtmlWebpackPlugin(getHtmlConfig('list','商品列表页')),
         new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情页')),
+        new HtmlWebpackPlugin(getHtmlConfig('about','关于ZMALL')),
         new HtmlWebpackPlugin(getHtmlConfig('cart','购物车')),
         new HtmlWebpackPlugin(getHtmlConfig('payment','订单支付页')),
         new HtmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认页')),

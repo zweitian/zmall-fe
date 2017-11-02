@@ -4,7 +4,7 @@
         <!-- 使用html-loader打包通用的html头文件 -->
         <%= require('html-loader!./layout/head-common.html')  %>
         <!-- 使用htmlWebpackPlugin配置中的title -->
-        <title><%= htmlWebpackPlugin.options.title%> -ZMALL电商平台</title>
+        <title><%= htmlWebpackPlugin.options.title%>  -ZMALL电商平台</title>
     </head>
     <body>
         <%= require('html-loader!./layout/nav.html')  %>
@@ -19,24 +19,19 @@
                 </div>
             </div>
         </div>
-        <!-- 商品详细信息容器 -->
         <div class="page-wrap w">
-            <div class="panel">
-                <h1 class="panel-title">收货地址</h1>
-                <div class="panel-body address-con">
-                   
+            <!--左侧菜单导航条-->
+            <%= require('html-loader!./layout/nav-side.html')  %>
+            <div class="content with-nav">
+                <div class="panel">
+                    <div class="panel-title">关于ZMALL</div>
+                    <div class="panel-body">
+                        NMSL<br/>
+                        NSND<br/>
+                        HJYZ<br/>
+                    </div>
                 </div>
             </div>
-             <div class="panel">
-                <h1 class="panel-title">商品清单</h1>
-                <div class="panel-body product-con">
-                    
-                </div>
-            </div>
-        </div>
-        <!--弹出模态框-->
-        <div class="modal-wrap">
-            
         </div>
         <!--脚部页面-->
         <%= require('html-loader!./layout/footer.html')  %>
