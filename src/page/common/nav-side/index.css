@@ -1,0 +1,28 @@
+/*
+* @Author: ztian
+* @Date:   2017-10-26 19:54:56
+* @Last Modified by:   ztian
+* @Last Modified time: 2017-10-26 21:09:13
+*/
+/* 内容面板左侧导航条 需要指定宽度,高度内容才会提取占据位置*/
+.nav-side{
+    float: left;
+    width: 130px;
+    min-height: 100px;
+}
+.nav-side .nav-item{
+    line-height: 25px;
+    font-size: 13px;
+}
+.nav-side .nav-item .link{
+    color: #888;
+}
+/* 点击链接后的样式 */
+.nav-side .nav-item.active .link{
+    color: #c60023;
+}
+/* 内容面右侧内容区 */
+.content.with-nav{
+    float: left;
+    width: 950px;
+}

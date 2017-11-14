@@ -1,0 +1,96 @@
+/*
+* @Author: ztian
+* @Date:   2017-10-29 15:41:49
+* @Last Modified by:   ztian
+* @Last Modified time: 2017-10-30 16:56:03
+*/
+/* 排序栏样式 */
+.sort-con{
+    overflow: hidden;
+}
+.sort-con .sort-item{
+    float: left;/* sort-item进行紧贴的浮动布局 */
+    display: inline-block;
+    position: relative; /* 上下箭头需根据sort-item进行定位*/
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #ccc;
+    margin-right: -1px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+}
+.sort-con .sort-item.active{
+    background: #c60023;
+    border:1px solid #c60023;
+    color: #fff;
+}
+/* 改变降序图标的位置 */
+.sort-con .sort-item .fa-sort-desc{
+   position: absolute;
+   top: 8px;
+   right: 8px;
+}
+/* 升序排列时  降序图标透明度降低 */
+.sort-con .sort-item.asc .fa-sort-desc{
+   opacity: .6;
+}
+/* 降序排列时  升序图标透明度降低 */
+.sort-con .sort-item.desc .fa-sort-asc{
+   opacity: .6;
+}
+/* 每项商品样式 */
+.p-list-con{
+    margin-top: 15px;
+    margin-right: -20px;/* 定宽div变为1100px */
+    overflow: hidden;
+}
+/* 每个p-item占220px宽度 */
+.p-list-con .p-item{
+   position: relative;
+   width: 180px;
+   float: left;
+   padding: 10px;
+   margin:0 20px 20px 0;
+   background: #fff;
+}
+/* 每项商品图片样式 */
+.p-list-con .p-item .p-img-con{
+   width: 180px;
+   height: 200px;
+}
+.p-list-con .p-item .p-img-con .p-img{
+   width: 100%;
+   height: 100%;
+}
+/* 每项商品价格样式 */
+.p-list-con .p-item .p-price-con{
+    height: 30px;
+    line-height: 30px;
+}
+.p-list-con .p-item .p-price-con .p-price{
+    font-size: 16px;
+    color: #e7380d;
+}
+/* 每项商品文字说明样式 */
+.p-list-con .p-item .p-name-con{
+    height: 40px;
+    overflow: hidden;
+}
+.p-list-con .p-item .p-name-con .p-name{
+    line-height: 20px;
+    margin-bottom: 10px;
+    color: #666;
+    text-decoration: none;
+}
+/* 找不到商品时错误信息的样式 */
+.err-tip{
+    height: 60px;
+    line-height: 60px;
+    color: #f60;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background: #eee;
+}

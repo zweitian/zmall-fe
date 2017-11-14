@@ -1,0 +1,21 @@
+/*
+* @Author: ztian
+* @Date:   2017-10-28 00:16:46
+* @Last Modified by:   ztian
+* @Last Modified time: 2017-10-28 15:07:44
+*/
+.form-line{
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+}
+.form-line .label{
+    width: 60px;
+    display: inline-block;
+    text-align: left;
+}
+/* 修改按钮样式 */
+.btn-submit{
+    width: 40px;
+    text-align: center;
+}
