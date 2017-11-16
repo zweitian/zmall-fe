@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-24 11:28:35
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-10-28 11:29:26
+* @Last Modified time: 2017-11-16 15:33:36
 */
 'use strict'
 //引入result.html的css
@@ -28,8 +28,8 @@ var page = {
         this.bindEvent();
     },
     /*绑定事件*/
-    bindEvent(){
-        var _this = this;
+    bindEvent :function(){
+        //var _this = this;
         /*登录按钮绑定事件*/
         $('#submit').click(function(){
             _this.submit();
@@ -42,7 +42,7 @@ var page = {
         });
     },
     /*提交表单*/
-    submit(){
+    submit :function(){
         var formData = {
             username : $.trim($('#username').val()),
             password : $.trim($('#password').val())
