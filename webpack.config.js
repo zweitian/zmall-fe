@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-24 11:19:12
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-11-02 22:41:01
+* @Last Modified time: 2017-11-16 19:17:41
 */
  var webpack                = require('webpack');
  var ExtractTextPlugin      = require("extract-text-webpack-plugin");
@@ -15,7 +15,7 @@
     return {
             template    : './src/view/'+ name +'.html',//文件模版地址
             filename    : 'view/'+ name +'.html',//输出文件地址
-            favicon     : './favicon.ico',
+            favicon     : './favicon.ico',//网站的favicon
             title       : title,
             inject      : true,//引入js文件位于body标签最下面
             hash        : true,
@@ -46,7 +46,7 @@
      output: {
          path       : __dirname + '/dist/',
          //WEBPACK_ENV === 'online' ? '//s.happymmall.com/admin-fe/dist/' : '/dist/'
-         publicPath :  WEBPACK_ENV === 'online' ? '//s.happymmall.com/admin-fe/dist/' : '/dist/',
+         publicPath :  WEBPACK_ENV === 'dev' ? '/dist/' : '//s.zwtzmall.cn/zmall-fe/dist/',
          filename   : 'js/[name].js'
      },
      //jquery全局变量设置
@@ -66,7 +66,7 @@
             },
             //读取css的loader
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
-            //图片、字体文件loader
+            //图片、字体文件loader   //   publicPath/resource/[name].ext
             { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
         ]
     },
@@ -87,7 +87,7 @@
             filename : 'js/base.js'
         }),
         //css单独打包插件
-        new ExtractTextPlugin("css/[name].css"),
+        new ExtractTextPlugin("css/[name].css"),  //   publicPath/css/[name].css
         //js文件与js文件引用的css文件打包进模版html中
         new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
         new HtmlWebpackPlugin(getHtmlConfig('list','商品列表页')),

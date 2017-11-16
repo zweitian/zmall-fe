@@ -2,7 +2,7 @@
 * @Author: ztian
 * @Date:   2017-10-24 11:28:35
 * @Last Modified by:   ztian
-* @Last Modified time: 2017-11-16 15:33:36
+* @Last Modified time: 2017-11-16 19:38:24
 */
 'use strict'
 //引入result.html的css
@@ -29,7 +29,7 @@ var page = {
     },
     /*绑定事件*/
     bindEvent :function(){
-        //var _this = this;
+        var _this = this;
         /*登录按钮绑定事件*/
         $('#submit').click(function(){
             _this.submit();
