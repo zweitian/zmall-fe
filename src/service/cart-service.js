@@ -53,31 +53,32 @@ var _cart = {
             url     : _mm.getServerUrl('/cart/deselection/'+productId),
             method  : 'POST',
             data    :{
+                _method :'PUT',
                 productId :productId
             },
             success : resolve,
             error   : reject
         });
     },
-    //选择购物车中所有商品
+    //全选购物车中所有商品
     selectAllProduct : function(resolve,reject){
          _mm.request({
             url     : _mm.getServerUrl('/cart/selection/all'),
             method  : 'POST',
             data    :{
-                productId :productId
+                _method :'PUT',
             },
             success : resolve,
             error   : reject
         });
     },
-    //取消选择购物车中所有商品
+    //取消全选购物车中所有商品
     unselectAllProduct : function(resolve,reject){
          _mm.request({
             url     : _mm.getServerUrl('/cart/deselection/all'),
             method  : 'POST',
             data    :{
-                productId :productId
+                _method :'PUT',
             },
             success : resolve,
             error   : reject
