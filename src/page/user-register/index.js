@@ -29,7 +29,7 @@ var page = {
     },
     /*绑定事件*/
     bindEvent :function(){
-        //var _this = this;
+        var _this = this;
         //username失去焦点验证用户名是否已存在
         $('#username').blur(function(){
             var username = $.trim($(this).val());
